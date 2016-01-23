@@ -3,6 +3,7 @@ author: grozeille
 comments: true
 date: 2008-06-22 14:22:13+00:00
 layout: post
+excerpt_separator: <!--more-->
 slug: impossible-de-demarrer-iis
 title: Impossible de démarrer IIS
 wordpress_id: 65
@@ -20,7 +21,7 @@ Symptôme: quand on souhaite démarrer IIS (6), ce dernier plante avec l'erreur 
 
 [![](http://grozeille.files.wordpress.com/2008/06/cannotstartiis2.jpg)](http://grozeille.files.wordpress.com/2008/06/cannotstartiis2.jpg)
 
-<!-- more -->
+<!--more-->
 
 Le nom de l'erreur n'est pas très clair, et je me suis dit que le numéro hexa serait différent pour chaque PC. Mais j'ai finis par chercher ce numéro sur Google et je suis tombé sur l'explication: [http://support.microsoft.com/kb/816944/fr](http://support.microsoft.com/kb/816944/fr)
 

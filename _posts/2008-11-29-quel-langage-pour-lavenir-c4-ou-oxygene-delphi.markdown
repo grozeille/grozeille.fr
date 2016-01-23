@@ -49,7 +49,7 @@ Ah, si, il y en a 1... et c'est le genre de personne à faire une chose d'une ce
 Je dois être vieux jeux, mais je préfère parfois la méthode "classique et lisible" même si elle est plus verbeuse. Pourtant, je me laisse séduire, et je deviens vite fan des méthodes d'extension et des expressions lambda. C'est comme si mes 2 personnalités entraient en conflit quand je me dit :
 
     
-    [code language='csharp']
+    ```C#
     return toto??tata;
     // ou
     return toto!=null?toto:tata;
@@ -58,7 +58,7 @@ Je dois être vieux jeux, mais je préfère parfois la méthode "classique et li
     return toto;
     else
     return tata;
-    [/code]
+    ```
 
 
 Il est clair que je préfère la première solution, mais on m'a défait fait la remarque :
@@ -116,12 +116,12 @@ Mais il ajoute aussi son lot de nouveauté que j'adore :
 
 
     
-    [code language='csharp']
+    ```C#
     if(truc.parent != null && truc.parent.parent != null)
     toto = truc.parent.parent;
     // devient
     toto = truc:parent:parent;
-    [/code]
+    ```
 
 
 
@@ -134,10 +134,10 @@ Mais il ajoute aussi son lot de nouveauté que j'adore :
 Combien de fois ais-je du ajouter un compteur dans un foreach (et risqué d'oublier le ++) et au final me résigner à utiliser le bon vieux "for". En Oxygene, le foreach peut gérer l'index :
 
     
-    [code language='csharp']
+    ```C#
     for each u in Users index i do begin
     // et on se sert de i
-    [/code]
+    ```
 
 
 Maintenant, Oxygene fait du buzz sur le net... enfin surtout "[Delphi Prism](http://www.remobjects.com/oxygene.aspx)".

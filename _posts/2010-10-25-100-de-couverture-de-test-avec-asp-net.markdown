@@ -22,7 +22,7 @@ Pour cela, j'utilise le combo: [Specflow](http://specflow.org/)+[Selenium](http:
 
 En terme de rédaction du test, cela donne ça:
 
-[code]
+```Gherkin
 ﻿Feature: Test with ASP.net
 	In order to get test coverage of my ASP.Net Application
 	As a developper
@@ -34,25 +34,25 @@ Scenario: Say Hello to Michel
 	When I enter the name "Michel"
 	And I click the "SayHello" button
 	Then the message is "Hello Michel"
-[/code]
+```
 
 Grâce à Specflow, je peux donc rédiger mon scénario en anglais, très lisible par l'utilisateur qui va pouvoir ainsi exprimer son besoin.
 Ces phrases sont ensuite couplées à des méthodes C# qui effectuent une partie du test. Exemple:
 
-[code language="csharp"]
+```C#
 [When("I click the \"SayHello\" button")]
 public void IClickTheSayHelloButton()
 {
     selenium.Click("SayHelloButton");
     selenium.WaitForPageToLoad((1 * 60 * 1000).ToString());
 }
-[/code]
+```
 
 On remarque ici que j'utilise Selenium pour simuler le scénario et effectuer un click sur un bouton de la page.
 
 Petite astuce: le scénario est "tagué" @selenium. Grâce à ce tag, je peux indiquer qu'il faut initialiser Selenium à chaque début de scénario tagué ainsi.
 
-[code language="csharp"]
+```C#
 [BeforeScenario("selenium")]
 public void BeforeScenario()
 {
@@ -65,7 +65,7 @@ public void BeforeScenario()
     ScenarioContext.Current["selenium"] = selenium;
     selenium.Start();
 }
-[/code]
+```
 
 OK, je suis content avec ça, je peux maintenant rédiger des tests fonctionnels lisibles et les automatiser à l'aide de Selenium.
 Mais cela ne me donne pas la couverture du code de mon application .Net qui se trouve hébergée sur un serveur IIS :(
@@ -74,7 +74,7 @@ Afin d'avoir la couverture du code de toute l'application, j'ai alors décider d
 Afin d'héberger l'application ASP.net, j'utilise pour cela la librairie de Mono: [XSP](http://www.mono-project.com/ASP.NET).
 Pour cela, quelques lignes de codes suffisent:
 
-[code language="csharp"]
+```C#
 [BeforeTestRun]
 public static void BeforeTestRun()
 {
@@ -98,7 +98,7 @@ public static void AfterTestRun()
 {
     webAppServer.Stop();
 }
-[/code]
+```
 
 Simple non?
 

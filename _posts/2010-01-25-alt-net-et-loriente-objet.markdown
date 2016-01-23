@@ -3,6 +3,7 @@ author: grozeille
 comments: true
 date: 2010-01-25 21:36:49+00:00
 layout: post
+excerpt_separator: <!--more-->
 slug: alt-net-et-loriente-objet
 title: ALT.Net et l'orienté objet
 wordpress_id: 261
@@ -27,7 +28,10 @@ Pour cela, il faut définir exactement ce qu'est l'Objet: d’après Freddy : **
 [![](http://grozeille.files.wordpress.com/2010/01/p1030608-1.jpg?w=300)](http://grozeille.files.wordpress.com/2010/01/p1030608-1.jpg)
 
 D’après lui, l’héritage est un handicap, la composition est une bonne chose, le polymorphisme aussi.
-<!-- more -->Mais voila, c'est mon blog, alors je parle de ce que je veux :)
+
+<!--more-->
+
+Mais voila, c'est mon blog, alors je parle de ce que je veux :)
 Ceci dit, j'avoue que çette présentation m'a fait réfléchir. A vrai dire, ça m'a presque empêcher de dormir!
 
 Après de longues réflexions, je ne pense pas que l'objet soit une erreur historique. Freddy souligne bien le fait que l'objet est complexe, et pas facile à maitriser. Vous en connaissez beaucoup qui ne font jamais une erreur d'architecture? Qui maitrise le MVC, l'AOP et l'ORM ? (à part moi? ^^)
@@ -128,11 +132,11 @@ Le problème est le suivant: j'ai une fonction qui calcule le totale avec taxe, 
 
 Je me retrouve avec un type incompatible, et pourtant, ma fonction a besoin de champs existant aussi bien dans le premier que le deuxième type: un total hors taxe.
 
-[code language="csharp"]
+```C#
 float ComputeWithTaxes(InvoiceDetailDto dto);
 var invoice = new InvoiceListItemDto();
 ComputeWithTaxes(invoice); // !!! ça marche pas
-[/code]
+```
 
 Faut-il alors de l'héritage pour que la fonction prenne en paramètre un type commun?
 Ah NON! Si je commence comme ça, je vais avoir besoin de multiple héritage rapidement, pour de multiples fonctions. Et comme je code en C#, je n'ai pas de multiple héritage.
@@ -143,9 +147,9 @@ Une solution existe alors pour convertir un type "presque identique" à un autre
 Une solution proposé par Fredy, c'est de ne pas typer tout simplement. Ma fonction va alors "planter" si elle n'a pas les informations attendues, mais fonctionnera le reste du temps.
 Mais une autre solution plus simple existe: je peux simplifier la fonction pour ne lui donner **QUE CE QUI EST NECESSAIRE**:
 
-[code language="java"]
+```JAVA
 float ComputeWithTaxes(float totalWithoutTaxes);
-[/code]
+```
 OK, dans ce cas c'est simple. Mais si j'ai besoin de 10 paramètres à ma fonction?
 
 
@@ -158,7 +162,7 @@ Cela simplifie l'appel de la méthode, et rend la lecture du code plus lisible.
 
 Prenons par exemple l'interface suivante:
 
-[code language="java"]
+```JAVA
 public class InvoiceService
 {
   Invoice ProcessMessage(ApplyDiscountMessage message)
@@ -170,7 +174,7 @@ public class InvoiceService
   {
     // ignore it, unkown message type
   }
-}[/code]
+}```
 
 Grâce au polymorphisme, nous avons un comportement dynamique qui traite le message si son type est connu.
 Si tout les services sont capables de prendre une commande, ils peuvent se spécialiser pour traiter certains type de commandes et ignorer les autres.
@@ -179,9 +183,9 @@ Un appel à la méthode "ProcessMessage" ne provoquera alors jamais une erreur d
 Et puisque mon programme peut posséder plusieurs services capables de traiter un même type de message, je peux alors le dispatcher à chacun d'eux.
 Exemple :
 
-[code language="csharp"]
+```C#
 Factory.GetServices().ProcessMessage(new ApplyDiscountMessage {id=1, discount=10.0}) ;
-[/code]
+```
 
 
 
@@ -196,7 +200,7 @@ Je vais donc essayer de reprendre les concepts cité plus haut, et en faire un N
 Reprenons le plus important: **"Pas d'objet, des données!"**.
 Soit alors la définition d'une donnée comme ceci:
 
-[code language="csharp"]
+```C#
 data Person
 {
   key int Id;
@@ -211,14 +215,14 @@ data Person
 
   string Lastname;
 }
-[/code]
+```
 
 Il n'y a ici que de la donnée, pas de comportement. Donc inutile de rendre des choses privés, si aucunes méthodes ne peut s'en servir.
 Comme je l'ai dis plus tôt, on a besoin d'un identifiant pour cette donnée. Pourquoi ne pas l'inclure au langage?
 De même pour la version ou les contraintes sur les données.
 Si vous souhaitez calculer l'age de la personne, il suffit alors de demander à un service de le faire:
 
-[code language="csharp"]
+```C#
 contract PersonContract
 {
   float ComputeAge(Person this);
@@ -231,11 +235,11 @@ contract PersonContract
 
   Person BuildNew();
 }
-[/code]
+```
 Ceci est une "interface", ou dirais-je un "contrat". Comme le dit Freddy: pas besoin de "private/public" puisque toute implémentation est privé et toute interface est publique.
 Voici donc l'implémentation:
 
-[code language="csharp"]
+```C#
 // on parle beaucoup "d'injection de dépendance", c'est même maintenant une JSR en Java,
 // ou un mot clé dans le langage NOOP. Un contrat peut donc dépendre d'un autre contrat
 service PersonService : PersonContract<Person>
@@ -246,7 +250,7 @@ service PersonService : PersonContract<Person>
 
   string SayHelloTo(Person otherPerson) =>
      "Hello {otherPerson.FirstName} {otherPerson.LastName.ToUpper()}";   
-  
+
   string Talk(Person to, string message) =>
      var m = message??"Hello";
      "Hey {to.FirstName}, {m}!";
@@ -257,13 +261,13 @@ service PersonService : PersonContract<Person>
 
   Person BuildNew()=>
      var id = PersonRepository.GetNextId();
-     new Person{ Id = id }; 
+     new Person{ Id = id };
 }
-[/code]
+```
 
 On peut alors imaginer une utilisation de ce service comme ceci:
 
-[code language="csharp"]
+```C#
 // constructeur? pas besoin avec des types valeur...
 Person moi;
 
@@ -283,7 +287,7 @@ moi.Talk(message = "Salut", to = Freddy)
 
 // ... et les paramètres ont des valeurs par défaut
 moi.Talk(to = Freddy);
-[/code]
+```
 
 
 
@@ -291,16 +295,16 @@ moi.Talk(to = Freddy);
 
 
 Après ce petit essaie, il ne me reste plus qu'à maitriser [http://www.antlr.org/works/index.html](http://www.antlr.org/works/index.html) et réaliser mon propre langage ;)
-  
-  
+
+
 
 Cette proposition de langage ne résout pas un dernier problèmes évoqué par Freddy concernant l'objet: le typage fort.
 Je ne suis pas sûr que le Javascript soit le meilleur langage du monde :) ça me fait perdre trop de cheveux lors des "debugging-party".
 Je ne suis pas fan d'écrire du code qui "peut être marche", je préfère éviter de longue journée de débuguage devant le client.
-  
+
 
 C'est parfois utile, c'est pourquoi C#4 offre maintenant le mot clé "dynamic". Mais dans certain cas on souhaite s'assurer que le programme est viable, et pour cela il existe la programmation par "contrat" comme le propose [Spec#](http://bit.ly/7LEZiE).
-  
-  
+
+
 
 Bref, rien de bien nouveau donc. La plupart des propositions proviennent de langages déjà existant. On en revient toujours au même problème: est-ce l'outil qui est mal adapté? Ou est-ce qu'on l'utilise pas comme il le faut? Je ne suis donc pas sectaire, et apprendre de nouveau langage, objet, fonctionnel ou autre, ne me dérange absolument pas. C'est pour moi un métier passionnant que d'apprendre toutes ces choses et utiliser le langage adapté situation.

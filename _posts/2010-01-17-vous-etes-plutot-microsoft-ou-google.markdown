@@ -3,6 +3,7 @@ author: grozeille
 comments: true
 date: 2010-01-17 17:21:52+00:00
 layout: post
+excerpt_separator: <!--more-->
 slug: vous-etes-plutot-microsoft-ou-google
 title: Vous êtes plutôt Microsoft ou Google?
 wordpress_id: 228
@@ -95,7 +96,7 @@ Il est déjà 1h du mat’, il faut vous coucher. Vous commencez à faire des r�
 
 Comptabilisez vos réponses, et grâce à nos algorithmes mathématiques très complexes, la science et la psychologie vont déterminer de quel côté vous vous situez!
 
-<!-- more -->
+<!--more-->
 
 Vous avez plus de [![](http://grozeille.files.wordpress.com/2010/01/circle1.png)](http://grozeille.files.wordpress.com/2010/01/circle1.png) : c’est que Microsoft est pour vous  l'entreprise idéale. C'est pour vous synonyme de stabilité, une garantie de fiabilité mais c'est aussi une technologie toujours à la pointe.
 

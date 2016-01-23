@@ -3,6 +3,7 @@ author: grozeille
 comments: true
 date: 2008-09-02 19:45:46+00:00
 layout: post
+excerpt_separator: <!--more-->
 slug: google-chrome-rocks
 title: Google-chrome rocks!!!
 wordpress_id: 91
@@ -21,7 +22,10 @@ Cela fait du buzz en ce moment, Google sort son navigateur [Google-Chrome](http:
 Premièrement, j'adore la style "BD", car comme on le dit : "un schéma vaut parfois mieux qu'un long discours". Et on comprend tout de suite ce qu'ils veulent dire quand on voit la représentation "imagé".
 
 J'aime bien donner mon point de vue, et je vais surtout m'attarder sur l'aspect "interface utilisateur" et "Web vs Desktop".
-<!-- more -->J'avais déjà lu de nombreux trucs sur [la gestion des onglets dans les navigateurs](http://people.mozilla.com/~faaborg/files/prism/announcement/transition550.png), et en résumé on remarque que l'OS gère tellement mal les fenêtres, que l'on a inventé une nouvelle "barre de tâches" intégrée au navigateur (les onglets).
+
+<!--more-->
+
+J'avais déjà lu de nombreux trucs sur [la gestion des onglets dans les navigateurs](http://people.mozilla.com/~faaborg/files/prism/announcement/transition550.png), et en résumé on remarque que l'OS gère tellement mal les fenêtres, que l'on a inventé une nouvelle "barre de tâches" intégrée au navigateur (les onglets).
 Certes, avec des gestionnaires de fenêtres tel que sous MacOS, avec Exposé, ou sous Linux, avec [Compiz](http://fr.youtube.com/watch?v=-LsrocISlyQ), il est facile de naviguer entre les fenêtres d'une même application sans avoir besoin d'onglet.
 Quand on dit que le Web converge vers le Desktop, on s'aperçoit qu'un site n'est ni plus ni moins qu'une application. Cela est d'autant plus flagrant avec des sites comme GMail, ou Facebook. Personnellement, je les laisse toujours ouverts, et pour éviter de les fermer accidentellement, je les laisse dans une fenêtre séparée de ma navigation "temporaire".
 De mon point de vue, ça ne devrait pas être le rôle du navigateur de gérer des fenêtres (onglets), mais plutôt celui de l'OS.

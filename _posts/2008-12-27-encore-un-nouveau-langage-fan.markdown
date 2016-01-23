@@ -3,6 +3,7 @@ author: grozeille
 comments: true
 date: 2008-12-27 22:58:24+00:00
 layout: post
+excerpt_separator: <!--more-->
 slug: encore-un-nouveau-langage-fan
 title: 'Encore un nouveau langage : FAN'
 wordpress_id: 120
@@ -19,7 +20,9 @@ Quand on développe sur la JVM, le langage "standard" reste Java. Mais cela ne v
 
 ![aa496123net_logoen-usmsdn10](http://grozeille.files.wordpress.com/2008/12/aa496123net_logoen-usmsdn10.gif) + ![java_logo](http://grozeille.files.wordpress.com/2008/12/java_logo.gif?w=188) = FAN ?
 
-<!-- more -->Mais le petit nouveau, FAN, cible aussi bien la JVM que la CLR.Net. Certes, les 2 mondes possèdent des concepts similaires, mais aussi très différents et qui risque de ne pas être possible d'exposé dans ce langage.
+<!--more-->
+
+Mais le petit nouveau, FAN, cible aussi bien la JVM que la CLR.Net. Certes, les 2 mondes possèdent des concepts similaires, mais aussi très différents et qui risque de ne pas être possible d'exposé dans ce langage.
 Ceci dit, la plupart des concepts sont haut-niveaux, et peuvent donc générer un bytecode en utilisant des concepts plus simples et bas niveau, comme un `foreach` peut être écrit sous la forme d'un `for`...
 
 En l'occurrence, FAN introduit un concept déjà existant en C# mais absent en Java : les Nullables.
@@ -32,28 +35,28 @@ Pour ma part, j'adore :
 
 
 
-	
+
   * gestion des `nullable`
 
-	
+
   * valeur par défaut des arguments des méthodes (ce qui évite plein de surcharge inutile)
 
-	
+
   * `property` implicite à la C#, pour toujours moins de code à écrire
 
-	
+
   * `closure` en Java
 
-	
+
   * pas de `;` superflux en fin de ligne
 
-	
+
   * l'équivalent du mot clé `dynamic` du C#4 avec `object->variable` !
 
-	
+
   * mot clé `once` qui évite de gérer manuellement le caching du résultat (genre : `if(truc == null) truc = new Truc(); return truc;")`
 
-	
+
   * l'écriture des listes/maps et l'écriture des instanciations "à la JSON"
 
 

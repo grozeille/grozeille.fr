@@ -3,6 +3,7 @@ author: grozeille
 comments: true
 date: 2009-04-29 22:15:10+00:00
 layout: post
+excerpt_separator: <!--more-->
 slug: jaxer
 title: Jaxer
 wordpress_id: 141
@@ -24,7 +25,9 @@ Et je bavais sur des sites entièrement Flash, magnifiques, et performants (quan
 Puis j'ai entendu parler de [DHTML](http://fr.wikipedia.org/wiki/HTML_dynamique): "la grosse blague", ce sont les mots que j'ai sans doute prononcés quand j'ai su que ce n'était qu'un nom marketing pour le couple Html+Javascript.
 
 Aujourd'hui on parle de [Web 2.0](http://fr.wikipedia.org/wiki/Web_2.0) ou d'[Ajax](http://fr.wikipedia.org/wiki/Asynchronous_JavaScript_and_XML). On parle aussi d'[Adobe Air](http://www.adobe.com/fr/products/air/), ou de [Silverlight](http://silverlight.net/) (on va éviter de parler de [JavaFX](http://javafx.com/)). Finalement, pas de grosse révolution, mais plutôt une "évolution".
-<!-- more -->
+
+<!--more-->
+
 Pour ceux qui ne sont pas au courant, je développe en .Net depuis un certain temps, et en ASP.Net depuis 1 an.
 Comme ça a été conclu lors [d'une réunion ALT.Net](http://www.altnetfr.org/2009/03/15/altnet-fr-10-debat-mvc-compte-rendu-par-vincent-b/), les développeurs ASP.Net sont souvent issues du monde Winforms et convertis par la tendance actuelle.
 Cela donne des développeurs complètement ignorant du protocole HTTP, de l'HTML et du Javascript: "C'est du C# ou rien!"
@@ -35,16 +38,16 @@ Moi même je ne suis pas BON en Javascript, pourtant tout est la:
 
 
 
-	
+
   * Frameworks graphiques puissants et nombreux: [ExtJS](http://extjs.com/), [Dojo](http://www.dojotoolkit.org/), [JQuery](http://jquery.com/), etc.
 
-	
+
   * Frameworks "de base" n'ayant rien à envier à .Net ou Java: [JsUnit](http://www.jsunit.net/), [log4js](http://log4js.berlios.de/), [ActiveRecordJS](http://activerecordjs.org/), etc.
 
-	
+
   * Moteurs Javascript de plus en plus rapide et performant: [v8 de Google](http://code.google.com/p/v8/) ou celui de Mozilla avec un GC.
 
-	
+
   * Nombreux outils et IDE de plus en plus compatibles: débugage et complétion dans VisualStudio ou [à l'aide de pluggin](http://www.spket.com/ext-intellisense-visual-studio.html), [firebug](http://getfirebug.com/), [YSlow](http://developer.yahoo.com/yslow/), etc.
 
 
@@ -57,17 +60,17 @@ Jaxer est un serveur web ([Apache](http://httpd.apache.org/)) avec un moteur de 
 En résumé: avec l'attribut "runat=server-proxy", le code Javascript est appelable depuis le navigateur mais est exécuté sur le serveur.
 Petit exemple:
 
-[code language='html']
+```HTML
 
-[/code]
+```
 
 C'est aussi simple que cela. Certains diront "beurk: du HTML+Javascript+SQL dans le même source...", mais cet exemple illustre bien ce qui est possible de faire. C'est maintenant à vous de séparer les librairies ".js" des pages HTML, et utiliser des procédures stockées ou un ORM Javascript (comme ActiveRecordJS).
 Dans notre cas, le code n'est visible que du coté serveur, si maintenant on souhaite appeler une fonction sur le serveur sur un événement coté client, voici le principe:
 
-[code language='html']
+```HTML
 
 
-[/code]
+```
 
 Dans ce cas, l'Ajax est effectué de manière automatique et transparente: une méthode "proxy" sera visible du coté client pour appeler le code du coté serveur.
 
@@ -76,31 +79,31 @@ Après tout, pourquoi apprendre 4 langages ? En générale, on a ça:
 
 
 
-	
+
   * HTML: interface statique
 
-	
+
   * Javascript: traitement dynamique coté client
 
-	
+
   * Java/.Net/Python/PHP/Ruby: traitement dynamique coté serveur
 
-	
+
   * SQL : traitement des données
 
 
 Aptana propose ceci:
 
-	
+
   * HTML: encore et toujours ;)
 
-	
+
   * Javascript: traitement dynamique coté client
 
-	
+
   * Javascript encore: traitement coté serveur
 
-	
+
   * pas de SQL à l'aide d'un ORM Javascript : ActiveRecordJS
 
 

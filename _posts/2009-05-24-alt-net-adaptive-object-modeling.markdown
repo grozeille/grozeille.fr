@@ -3,6 +3,7 @@ author: grozeille
 comments: true
 date: 2009-05-24 15:18:50+00:00
 layout: post
+excerpt_separator: <!--more-->
 slug: alt-net-adaptive-object-modeling
 title: 'ALT.Net: Adaptive Object Modeling'
 wordpress_id: 176
@@ -21,7 +22,9 @@ Bref, j’ai bien aimé cette rencontre qui revient sur l’esprit des première
 
 
 
-<!-- more -->Pour revenir à la présentation de Sébastien : il a commencé par dire que nous faisions tous de l’Adaptive Object Modeling sans le savoir. Et en effet ! Je n’arrête pas d’en faire, sans en connaitre le nom. A la suite de cette présentation, je me rends mieux compte des similitudes de mes projets, des méthodes/patterns employés, et je peux prendre plus facilement du recule sur tout ça.
+<!--more-->
+
+Pour revenir à la présentation de Sébastien : il a commencé par dire que nous faisions tous de l’Adaptive Object Modeling sans le savoir. Et en effet ! Je n’arrête pas d’en faire, sans en connaitre le nom. A la suite de cette présentation, je me rends mieux compte des similitudes de mes projets, des méthodes/patterns employés, et je peux prendre plus facilement du recule sur tout ça.
 
 L’Adaptive Object Modeling c’est quoi : c’est le fait de modéliser une application qui est capable de s’adapter à un modèle métier.
 Sébastien a cité 2 exemples : un gestionnaire de tâches (comme [Jira](http://www.atlassian.com/software/jira/)/[Trac](http://trac.edgewall.org/)/[Redmine](http://www.redmine.org/)) et une [GED](http://fr.wikipedia.org/wiki/Gestion_électronique_des_documents).
@@ -38,28 +41,28 @@ Pour cela, il faut que l’application s’adapte au modèle métier de chaque c
 
 
 
-	
+
   * Certains vendent des meubles, d’autres de l’électroménager
 
-	
+
   * Certains ont un workflow de validation des devis/factures complexe, d’autres non
 
-	
+
   * Certains appliquent des règles de calcules de prix complexes (taxes, remises, formule de calcule de prix), d’autres vendent les produits à des prix fixes
 
-	
+
   * Certains appellent un document « devis », d’autres une « quote » (français/canadiens)
 
-	
+
   * Etc.
 
 
 L’objectif est donc de modéliser un « méta-modèle » qui s’adapte à l’aide d’une configuration :
 
-	
+
   * Un produit possède un type : il peut être un meuble, un frigo, etc.
 
-	
+
   * Un type possède un ensemble d’attributs : un meuble possède une taille, un volume, une couleur, etc.
 
 

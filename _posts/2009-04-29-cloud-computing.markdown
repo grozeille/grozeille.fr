@@ -3,6 +3,7 @@ author: grozeille
 comments: true
 date: 2009-04-29 21:14:02+00:00
 layout: post
+excerpt_separator: <!--more-->
 slug: cloud-computing
 title: Cloud computing
 wordpress_id: 134
@@ -37,22 +38,24 @@ Bref, le Cloud ce n'est pas qu'un hébergeur de site web ou une [Dedibox](http:/
 Azure offre de quoi développer un site ASP.Net Scalable rapidement, mais je vais faire le chieur en voulant développer une application Rails sous Eclipse!
 
 C'est la que j'ai découvert [Aptana Cloud](http://www.aptana.com/cloud).
-<!-- more -->
+
+<!--more-->
+
 La solution d'Aptana est la suivante :
 
 
 
-	
+
   * Comme Azure, Aptana masque la complexité et l'installation des machines virtuelles. On a donc du "Plateform as a Service". On a droit à une machine pré-installée avec Apache, MySQL, SFTP, SSH, SVN, etc.
 
-	
+
   * Comme Azure, Aptana offre un IDE (Eclipse) avec un grand nombre de plugins pour développer, déployer et administrer le Cloud rapidement et facilement.
 
-	
+
   * Comme Azure, Aptana offre une interface Web pour gérer sa machine, la puissance consommée et ce que ça nous coûte en fin de compte. Aptana fournit aussi la possibilité d'héberger un site en "staging mode", puis quand on est sûr de soi, on a la possibilité de le basculer en "public mode".
 ![Staging](http://grozeille.files.wordpress.com/2009/04/image-172.png)
 
-	
+
   * Comme Amazon, la puissance et les prix sont scalables: on ne paye que ce dont on a besoin et on peut changer la puissance à la volé (le site indique $20 par mois, c'est parce qu'une machine de 256mo de RAM avec 5GB de disque coûte $0,027/heure)
 
 
@@ -62,13 +65,13 @@ Les points négatifs :
 
 
 
-	
+
   * Pas d'architecture applicative "scalable": contrairement à Azure qui permet de changer en 3 clicks le nombre de processus ou le nombre d'instances d'un site. On dépend ici de la scalabilité de la machine virtuelle. Aptana est en partenariat avec [Joyent](http://www.joyent.com/) qui héberge ces machines.
 
-	
+
   * Pas de services "haut niveau" comme ceux de Google (Google Maps, Google search, etc.) ou de Microsoft (Live Calendar, etc.). Mais rien ne nous empêche de les utiliser...
 
-	
+
   * Services bas niveau limités: MySQL est OK, mais si l'on a besoin d'un stockage performant et distribué, on utilisera en plus les services d'Amazon (S3) ou Google (BigTable).
 
 
@@ -78,31 +81,31 @@ Voici pour moi les PLUS d'Aptana:
 
 
 
-	
+
   * Plugins Eclipse de qualité avec un éditeur HTML/Javascript bien meilleur que celui par défaut (de [WTP](http://www.eclipse.org/webtools/))
 
-	
+
   * Permet de faire des applications HTML classiques, PHP, Rails, Java, mais aussi Python, Adobe AIR, iPhone, Nokia WRT.
 
-	
+
   * En quelques clicks dans le Wizard de création du projet, permet de choisir des frameworks Ajax parmi les plus connus ([jQuery](http://jquery.com/), [Dojo](http://www.dojotoolkit.org/), [ExtJS](http://extjs.com/), et j'en passe).
 
-	
+
   * Fournit une documentation riche à l'aide de vidéos sur [Aptana TV](http://tv.aptana.com/).
 
-	
+
   * Offre un nouveau type de développement full HTML+Javascript : [Jaxer](http://aptana.com/jaxer).
 
 
 En résumé, Aptana offre mieux que de simples machines virtuelles :
 
-	
+
   * un IDE puissant pour développer différents types d'applications
 
-	
+
   * des machines virtuelles scalables pré-installées pour déployer dessus
 
-	
+
   * une interface claire pour les administrer (statistiques, etc.)
 
 

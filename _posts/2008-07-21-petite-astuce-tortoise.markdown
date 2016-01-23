@@ -3,6 +3,7 @@ author: grozeille
 comments: true
 date: 2008-07-21 21:55:24+00:00
 layout: post
+excerpt_separator: <!--more-->
 slug: petite-astuce-tortoise
 title: Petite astuce Tortoise
 wordpress_id: 77
@@ -20,7 +21,9 @@ J'adore Tortoise, et ce dernier offre des fonctionnalités "supplémentaires" à
 On cherche souvent à empêcher les autres membres de l'équipe à commiter sans commentaires. C'est possible à l'aide des properties, à condition d'utiliser Tortoise :)
 
 [![](http://grozeille.files.wordpress.com/2008/07/tortoisesvnminlogsize.png?w=300)](http://grozeille.files.wordpress.com/2008/07/tortoisesvnminlogsize.png)
-<!-- more -->
+
+<!--more-->
+
 Les properties de Tortoise commencent par `tsvn:`. En voici [la liste](http://tortoisesvn.net/docs/release/TortoiseSVN_fr/tsvn-dug-propertypage.html#tsvn-dug-propertypage-tsvn-props).
 Celle qui nous intéresse est `tsvn:logminsize`. Ceci dit, ça ne va pas empêcher celui qui n'a vraiment pas envie d'en mettre de saisir n'importe-quoi, voir de passer par autre chose que Tortoise...
 

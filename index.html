@@ -17,11 +17,10 @@ layout: default
         <div class="excerpt"><article class="post-content">
           {{ post.excerpt }}
           <a class="button" href="{{ post.url | prepend: site.baseurl }}">
-            {{ site.theme.str_continue_reading }}
+            Continuer
           </a>
         </article>
         </div>
-        <!--{{ post.content }}-->
       </li>
     {% endfor %}
   </ul>

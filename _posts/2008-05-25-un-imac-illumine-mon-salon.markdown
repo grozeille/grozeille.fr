@@ -3,6 +3,7 @@ author: grozeille
 comments: true
 date: 2008-05-25 13:12:33+00:00
 layout: post
+excerpt_separator: <!--more-->
 slug: un-imac-illumine-mon-salon
 title: un iMac illumine mon salon
 wordpress_id: 58
@@ -17,17 +18,19 @@ tags:
 
 Enfin, après une longue attente, de nombreuses hésitations, [l'iMac illumine mon salon](http://picasaweb.google.com/mathias.kluba/IMac/photo#5204268163813992866)!
 
-A chaud voici mes premières impressions:<!-- more -->
+A chaud voici mes premières impressions:
+
+<!--more-->
 
 
 
-	
+
   * C'est beau, la dessus on est tous 	d'accord. Le packaging est de qualité, l'objet en lui même est 	magnifique, et MacOSX est sublime. Même des applications 	"classiques" comme Firefox [sont beaucoup plus 	belles/ergonomiques](http://picasaweb.google.com/mathias.kluba/IMac/photo#5204300088305904242). On voit que tous les développeur Mac font un 	effort particulier dans le domaine.
 
 
 
-	
-  * 
+
+  *
 
 
 MacOSX c'est pratique. Je n'ai 	aucun problème à trouver quoique ce soit. Tout est à porté de 	click, c'est vraiment l'informatique à porté de tous, et c'est 	très agréable, voir reposant. Vous ne le savez peut-être pas, 	mais les applications ne s'installent pas avec un Setup comme sous 	Windows. Chaque application est un dossier avec son icon perso. Ce 	dossier contient tous les fichiers de l'application, et un 	double-click sur le dossier lance l'application. Quand on télécharge 	une application, on récupère un .dmg (une image ISO) qu'on "monte" 	(avec un simple double-click). [Cette dernière possède souvent une 	apparence de dossier personnalisée](http://picasaweb.google.com/mathias.kluba/IMac/photo#5204268417217063394) et l'installation du logiciel se 	fait à l'aide d'un simple "glisser/déposer" de l'icon de 	l'application dans le dossier "Application". Voici 	plusieurs exemples.
@@ -35,8 +38,8 @@ MacOSX c'est pratique. Je n'ai 	aucun problème à trouver quoique ce soit. Tout
 
 
 
-	
-  * 
+
+  *
 
 
 C'est fluide. MacOS avec ses 	effets de fondu donne une impression encore plus grande de fluidité. 	Les jeux sont fluide aussi: j'ai testé WOW sous Mac, la démo de 	Quake4 toujours  sous Mac, mais aussi [Unreal](http://picasaweb.google.com/mathias.kluba/IMac/photo#5204268700684904994) [Tournament](http://picasaweb.google.com/mathias.kluba/IMac/photo#5204268739339610674) [3 sous 	Windows](http://picasaweb.google.com/mathias.kluba/IMac/photo#5204268773699349058): En 1900x1200 j'ai de très bonnes perfs (entre 60fps et 	38fps, et en activant la synchro verticale je fait en moyenne du 	50fps).
@@ -44,8 +47,8 @@ C'est fluide. MacOS avec ses 	effets de fondu donne une impression encore plus g
 
 
 
-	
-  * 
+
+  *
 
 
 [C'est grand](http://picasaweb.google.com/mathias.kluba/IMac/photo#5204268258303273410). L'écran est 	tellement grand (1900x1200) que je me suis rendu compte que j'étais 	assis à gauche de mon bureau est que je ne regarde qu'un morceau de 	l'écran. Je dois tourner la tête pour voir l'autre coté, ou 	prendre du recule! En tout cas, avec la télécommande de FrontRow 	et le cul posé dans le canapé, c'est un vrai bonheur.
@@ -53,8 +56,8 @@ C'est fluide. MacOS avec ses 	effets de fondu donne une impression encore plus g
 
 
 
-	
-  * 
+
+  *
 
 
 Le clavier plat "à la 	portable" est très agréable et silencieux. La souris sans fil 	est légère et précise.
@@ -65,8 +68,8 @@ Le clavier plat "à la 	portable" est très agréable et silencieux. La souris s
 
 Tout n'est pas rose non plus, voici mes premières impressions négatives:
 
-	
-  * 
+
+  *
 
 
 Les touches du clavier ne sont pas 	"standard". C'est très troublant d'avoir le '!' avec 	'shift+8' ou ce genre de changement... je ne sais toujours pas ou 	trouver l'anti-slash.
@@ -74,8 +77,8 @@ Les touches du clavier ne sont pas 	"standard". C'est très troublant d'avoir le
 
 
 
-	
-  * 
+
+  *
 
 
 Les raccourcies sont très 	différents sous MacOS. J'ai buté pour trouver comment supprimer 	des fichiers (cmd+backspace) et je me fait piégé souvent avec le 	'ctrl+flèche' qui me change de bureau (sous windows/linux je m'en 	sert pour déplacer le cursor de mot-en-mot). La touche 'fin' va à 	la fin du document et je n'ai pas encore trouvé comment aller à la 	fin de la ligne. Ceci dit, je m'habitue vite (comme pour le 'cmd+c' 	pour copier et non 'ctrl+c')
@@ -83,8 +86,8 @@ Les raccourcies sont très 	différents sous MacOS. J'ai buté pour trouver comm
 
 
 
-	
-  * 
+
+  *
 
 
 La mightymouse: petite, jolie, 	agréable, mais elle n'est pas parfaite. Les clicks 'latéraux' sont 	très très dure (je vais me muscler les doigts). Elle supporte le 	click-droit (qui est désactiver par défaut -_-') mais étant 	"tactile" il détecte parfois un click-gauche. Pour être 	sûr de faire un click-droit, il faut lever le doigt du click-gauche 	ou utiliser le raccourcie 'ctrl+click'.
@@ -92,7 +95,7 @@ La mightymouse: petite, jolie, 	agréable, mais elle n'est pas parfaite. Les cli
 
 
 
-	
+
   * Au début j'ai trouvé que le son était pas mal. Mais au 	bout d'un moment, j'avais une sensation d'être dans une grande 	salle qui résonne ou à un concert. J'ai vite remis mes enceintes.
 
 

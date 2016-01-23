@@ -3,6 +3,7 @@ author: grozeille
 comments: true
 date: 2010-02-28 19:29:20+00:00
 layout: post
+excerpt_separator: <!--more-->
 slug: dotnetserver
 title: DotNetServer
 wordpress_id: 280
@@ -30,7 +31,8 @@ Certains dirait que ce n'est pas une grosse perte ;) En effet, J2EE n'a rien de 
 
 Je trouve stressant qu'une application .Net "d'entreprise" doit forcement dépendre des services Windows, des tâches schédulées, ou d'IIS. Déployer une application Java sur Tomcat est d'une simplicité déconcertante, et Microsoft propose un équivalent seulement dans le future Windows Server 2008 R2 avec [Windows AppFabric](http://msdn.microsoft.com/en-us/windowsserver/ee695849.aspx).
 Et encore, pour avoir vu la présentation aux Techdays, je suis plutôt déçu.
-<!-- more -->
+
+<!--more-->
 
 
 ## Gigaspaces? Un conteneur d'application malgré lui.
@@ -61,25 +63,25 @@ J'ai passé ma journée à cherche un mécanisme de communication inter-AppDomai
 
 
 
-	
+
   * [PIPE/Mémoire partagée/Sémaphore](http://en.wikipedia.org/wiki/Inter-process_communication): ... je vais éviter de re-inventer la roue...
 
-	
+
   * [.Net Remoting](http://en.wikipedia.org/wiki/.Net_Remoting): la solution officiel de Microsoft pour une communication Inter-AppDomain, même s'ils disent que .Net Remoting est obsolète pour laisser place à WCF
 
-	
+
   * [WCF avec le NAMED-PIPE](http://en.wikipedia.org/wiki/Windows_Communication_Foundation): WCF n'existant pas sous Mono, je n'y pense même pas, surtout que c'est un peu une usine à gaz
 
-	
+
   * [RMI/IIOP](http://iiop-net.sourceforge.net/): pourquoi pas, mais c'est une solution plutôt distribuée (basé sur .Net Remoting).
 
-	
+
   * [COM/DCOM](http://en.wikipedia.org/wiki/Distributed_Component_Object_Model): Solution Microsoft pure, étant même préconiser par Microsoft à la place de remoting (car plus de sécurité, transaction distribué, etc.). Mais pure Microsoft/Windows = pas pour moi
 
-	
+
   * [XPCOM](http://en.wikipedia.org/wiki/Xpcom): en gros, dans la famille Corba, je veux le fils, celui qui n'est pas chez Microsoft. C'est peut-être une solution à envisager, mais Corba est abandonné dans le monde Linux pour du DBus
 
-	
+
   * [DBus](http://en.wikipedia.org/wiki/D-Bus): protocole inventé pour une communication inter-processus sous Linux, pour remplacer l'ORB de Gnome ou DCop de KDE. C'est clairement un équivalant à COM, sans être un "Corba'like", et c'est devenu standard sous Linux. De plus, [une implémentation pure .Net](http://www.ndesk.org/DBus) existe.
 
 
@@ -98,13 +100,13 @@ Ces derniers se chagent car ils ne l'étaient pas encore.
 
 
 
-	
+
   * Le bundle **DBus** est simplement un démon DBus, qui offre un bus de message, un peut comme un broker dans Corba.
 
-	
+
   * Le bundle **MyBundle** va alors publier des services auprès de DBus.
 
-	
+
   * Le bundle **MyAnotherBundle** va alors consommer les services de MyBundle (il affiche le résultat de la fonction "sayHello" de MyBundle).
 
 

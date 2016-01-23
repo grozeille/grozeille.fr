@@ -3,6 +3,7 @@ author: grozeille
 comments: true
 date: 2008-05-02 22:15:09+00:00
 layout: post
+excerpt_separator: <!--more-->
 slug: a-la-conquete-du-web-30
 title: A la conquête du Web 3.0
 wordpress_id: 51
@@ -19,7 +20,9 @@ tags:
 ---
 
 J'ai eu une discutions intéressante ce midi au sujet du buzz en ce moment: [Adobe open-source Flash](http://www.adobe.com/openscreenproject/)! Je vois ça comme un premier pas vers la conquête du Web 3.0. Une guerre déjà entamé entre Adobe, Microsoft et le monde libre.
-<!-- more -->
+
+<!--more-->
+
 Haha, je sais que le terme _[Web 2.0](http://fr.wikipedia.org/wiki/Web_2.0)_ fait couler beaucoup d'encre (ou abîme les claviers) mais moi je le prend du point de vue du développeur:
 
 Au début, il y avait le néant... puis l'informaticien inventa la page HTML! Dans sa foulé il inventa le Javascript... puis les applets Java... pas de chance, l'informaticien était en avance sur son temps...
@@ -51,16 +54,16 @@ Mais Sun propose des solutions:
 
 
 
-	
+
   * [Java Kernel](http://weblogs.java.net/blog/enicholas/archive/2006/09/java_browser_ed.html): le principe est simple, il faut que le téléchargement d'une JRE soit négligeable (tout comme Flash). Pour ce faire, l'utilisateur télécharge une version "minimale" de la JRE, qui téléchargera des paquets supplémentaires seulement s'il y en a besoin.
 
-	
+
   * Java2D/Swing [plus performant](http://java.sun.com/developer/technicalArticles/J2SE/Desktop/javase6/#Java_2D), ainsi que l'accélération avec DirectX (elle existait depuis peux de temps, mais désactivé par défaut car trop buggué). Cela permet aussi des effets comme la transparence etc.
 
-	
+
   * [JavaFX](http://www.cnettv.com/9742-1_53-27434.html): ou comment créer un langage de description d'interface, pour créer plus simplement des animations etc.
 
-	
+
   * Java est [open-source](http://openjdk.java.net/): à quand Java installé par défaut sous Linux? (Même si c'est maintenant un [paquet officiel d'Ubuntu](http://openjdk.java.net/install/#ubuntu))
 
 

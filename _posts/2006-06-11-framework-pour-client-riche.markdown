@@ -6,6 +6,7 @@ layout: post
 slug: framework-pour-client-riche
 title: Framework pour "client riche"
 wordpress_id: 13
+excerpt_separator: <!--more-->
 categories:
 - Developpement
 tags:
@@ -23,7 +24,9 @@ Dans le monde .Net, [CAB](http://www.gotdotnet.com/codegallery/codegallery.aspx?
 
 On peut aussi se faire son propre framework... et je vais essayer de lister les avantages et inconvenients de coder soi meme ou d'utiliser l'existant car, bien evidement, aucune solution n'est parfaite et la bonne solution est celle qui s'adapte le mieux au besoin...
 
-<!-- more -->Un framework existant c'est bien, c'est puissant, c'est deja code, mais on n'en a pas la maitrise. S'il y a un bug, on laisse a l'equipe du framework le soin de le corriger. Mais puisqu'on en a pas la maitrise, on ne choisi pas non plus les evolutions et les possibilites du framework.
+<!--more-->
+
+Un framework existant c'est bien, c'est puissant, c'est deja code, mais on n'en a pas la maitrise. S'il y a un bug, on laisse a l'equipe du framework le soin de le corriger. Mais puisqu'on en a pas la maitrise, on ne choisi pas non plus les evolutions et les possibilites du framework.
 Meme si le travail de realisation du framework est deja fait, il faut tout de meme une formation (qu'on a pas si les personnes concernees font elle meme leur propre framework). Dans tout les cas, un framework existant "puissant" et "souple" est synonyme de "complexe". La formation n'est donc pas a negliger. En parlant de formation, je parle par experience de mes heures de developpement avec Eclipse RCP, quand on connait mal le framework on voit qu'on peut faire une meme chose de plusieurs façon et on ne sais jamais si c'est la bonne... et il n'y a rien de plus frustrant quand de simple petite chose deviennent vite complexe a realiser car le framework "enterre" tout et qu'on connait pas ses points d'entree pour atteindre la fonctionnalite voulue.Les frameworks "souples" le sont car ils doivent s'adapter aux besoins de chaque developpeur... Ce qui veut dire qu'il y a toujours une partie "parametrage" ou realisation d'un code commun pour repondre aux besoins de bases, avant de pouvoir utiliser les possibilites du framework. Exemple : je souhaite faire une application a l'aide d'eclipse RCP, mais en partant de rien j'ai une fenetre vide. Si je veux que ça ressemble a Outlook (barre de navigation laterale, menu principal, barre d'outil etc.) il me faut pas mal de code. Apres avoir realiser le "noyau" adapte a mes besoins, je peux commencer a coder les parties "metiers" de l'application.
 
 J'ai choisi de faire mon propre framework, car je pense que les frameworks existants sont trops complexe pour repondre au besoin. Je souhaite un framework "simple" sans trops de fonctionnalites "inutiles"... le mot d'ordre : Lightweight.

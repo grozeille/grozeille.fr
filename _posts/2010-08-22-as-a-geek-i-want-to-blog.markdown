@@ -61,11 +61,11 @@ Le truc, c’est que cela va me servir de Spec, ce qui va donc orienter la conce
 C’est déjà l’objectif du [TDD](http://en.wikipedia.org/wiki/Test-driven_development): concevoir une architecture à partir des tests, cela nous permet de réaliser QUE CE QUE L’ON A BESOIN: c’est le principe du [KISS](http://en.wikipedia.org/wiki/KISS_principle) ou [YAGNI](http://en.wikipedia.org/wiki/YAGNI).
 
 Mais ces tests peuvent être difficile à concevoir, mais le BDD nous aide à décrire nos tests!
-Si quelqu’un débarque sur le projet, et lit un test de 100 lignes de code, il va peut-être pas comprendre du premier coup. Mais s’il lit la version “Anglaise”, à moins qu’il ne sache pas lire, il va alors comprendre le test.
+Si quelqu’un débarque sur le projet, et lit un test de 100 lignes de code, il va peut-être pas comprendre du premier coup. Mais s’il lit la version "Anglaise", à moins qu’il ne sache pas lire, il va alors comprendre le test.
 
 Cette magie se fait à l’aide de [SpecFlow](http://specflow.org/), qui est la version 100% .Net du très à la mode [Cucumber](http://cukes.info/) (ou [Cuke4Nuke](http://github.com/richardlawrence/Cuke4Nuke)).
 
-Au programme: rédaction des tests “en Anglais”, intégration dans VisualStudio, et génération d’un test unitaire découpé en étapes (une étape par phrase).
+Au programme: rédaction des tests "en Anglais", intégration dans VisualStudio, et génération d’un test unitaire découpé en étapes (une étape par phrase).
 Cela rend alors les tests unitaires vraiment TRES TRES lisibles.
 
 Reprenons mon cas, ou je souhaite tester une application Web dans son ensemble.
@@ -73,7 +73,7 @@ Afin de tester l’interface Web, je vais implémenter les étapes de mon BDD à
 
 [![](http://grozeille.files.wordpress.com/2010/08/testspecflow1.png?w=300)](http://grozeille.files.wordpress.com/2010/08/testspecflow1.png)
 
-OK, j’ai maintenant un test compréhensible par un utilisateur… J’ai un test NUnit C# correctement découpé et donc plus lisible par les développeurs. Je pars du test pour définir mon UI, qui elle même va orienter le design de mon Controller et ainsi de suite… Je simule les clicks de souris afin de naviguer dans le site, et je détecte les erreurs “d’intégration”…
+OK, j’ai maintenant un test compréhensible par un utilisateur… J’ai un test NUnit C# correctement découpé et donc plus lisible par les développeurs. Je pars du test pour définir mon UI, qui elle même va orienter le design de mon Controller et ainsi de suite… Je simule les clicks de souris afin de naviguer dans le site, et je détecte les erreurs "d’intégration"…
 Mais j’ai toujours un même problème: je ne maitrise pas les données de ma base afin de vérifier le fonctionnement de mon test.
 
 Dans ce cas, il me faut simuler ma couche d’accès aux données à l’aide de mocks RhinoMocks.
@@ -91,7 +91,7 @@ Mon test va ensuite définir le comportement de ces derniers pour mon cas de tes
 
 Au final, cela donne:
 
-[code language="csharp"]
+```C#
 // J'utilise Deleporter pour exécuter ce code coté Serveur
 Deleporter.Run(() =>
 {
@@ -112,7 +112,7 @@ Deleporter.Run(() =>
         // j'informe à RhinoMock que j'ai terminé de spécifier le comportement du mock
 	mocks.Replay(repository);
 });
-[/code]
+```
 
 Il ne reste plus qu’à exécuter le test Selenium, vérifier les données de l'UI, et la boucle est bouclée!
 

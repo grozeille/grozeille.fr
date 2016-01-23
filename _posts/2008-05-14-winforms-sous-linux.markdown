@@ -3,6 +3,7 @@ author: grozeille
 comments: true
 date: 2008-05-14 21:50:20+00:00
 layout: post
+excerpt_separator: <!--more-->
 slug: winforms-sous-linux
 title: Winforms sous Linux
 wordpress_id: 57
@@ -29,7 +30,10 @@ Rappelons que les Winforms sont une sur-couche .Net de l'API WIN32. Cette derni�
 
 D'un autre coté, l'implémentation WPF chez Mono avance plutôt vite. D'ailleurs, la première release de [Moonlight vient de sortir](http://tirania.org/blog/archive/2008/May-13-1.html). Il n'y a pas de dépendance WIN32 dans ce cas, et je vois plus l'avenir des applications .Net dans ce sens. Mais l'approche WPF est d'avoir un thème propre à l'application, comme c'est le cas pour les sites Web, on obtient la même interface sous Linux et Windows (et MacOS). Mais finalement je trouve que ces interfaces ne s'intègrent à aucun des 3 environnements.
 
-<!-- more -->J'avais déjà rédigé un billet sur la guerre entre les technologies de "présentation" dans le domaine du Web (Ajax/Flash/etc.). Je ne vous l'apprend pas, le monde "Desktop" et "Web" convergent. L'idée est plutôt simple: aujourd'hui on doit exécuter un OS qui héberge des applications "Desktop", et on doit exécuter un navigateur pour les applications Web. On obtient une certaines confusion entre la barre des tâches pour les application et les onglets pour les sites Web. Tout ceci est beaucoup mieux expliqué [sur ce blog](http://labs.mozilla.com/2007/10/prism/).
+
+<!--more-->
+
+J'avais déjà rédigé un billet sur la guerre entre les technologies de "présentation" dans le domaine du Web (Ajax/Flash/etc.). Je ne vous l'apprend pas, le monde "Desktop" et "Web" convergent. L'idée est plutôt simple: aujourd'hui on doit exécuter un OS qui héberge des applications "Desktop", et on doit exécuter un navigateur pour les applications Web. On obtient une certaines confusion entre la barre des tâches pour les application et les onglets pour les sites Web. Tout ceci est beaucoup mieux expliqué [sur ce blog](http://labs.mozilla.com/2007/10/prism/).
 
 Mais de plus en plus, le navigateur ne sert qu'à exécuter un plugin (Silverlight/Flash/Java) qui lui charge l'application.
 L'objectif est de lancer une application Web comme une application "Dekstop", en exécutant le dis plugin en _standalone_, ou de passer par un "mini navigateur" (qui ne sert que pour le rendu HTML+Ajax, sans navigation etc). C'est en tout cas ce que propose [Adobe Air](http://www.adobe.com/products/air/) ou [Mozilla Prism](http://wiki.mozilla.org/Prism).

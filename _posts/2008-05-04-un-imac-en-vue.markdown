@@ -3,6 +3,7 @@ author: grozeille
 comments: true
 date: 2008-05-04 12:38:42+00:00
 layout: post
+excerpt_separator: <!--more-->
 slug: un-imac-en-vue
 title: Un iMac en vue?
 wordpress_id: 52
@@ -16,20 +17,22 @@ tags:
 ---
 
 Hier j'ai eu un petit coup de stress: je suis allé à tout hasard sur le site d'[Apple](http://www.apple.fr) et "oh joie" l'iMac a bénéficié d'une [mise-à-jour](http://www.apple.com/fr/imac/)... mais ce qui m'a le plus emballé c'est l'adoption d'un Nvidia 8800GS! Oui, ce n'est plus un ATI spécialisé dans le multimédia, mais bien une Geforce!
-<!-- more -->
+
+<!--more-->
+
 Certes, la version "GS" est très loin de la "GTX"... n'oublions pas qu'un iMac c'est comme un gros portable: compact, sans bruit et consommant peu. Sur ce dernier point j'ai lu des critiques qui souligne que l'Upgrade n'est pas sans conséquence sur la puissance consommée.
 
 Pour vous dire toute la vérité, ça fait des années que je bave sur les Mac pour leur design, leur discrétion et leur OS. De plus, depuis les processeurs Intel et [BootCamp](http://www.apple.com/fr/macosx/features/bootcamp.html), je rêve du triple-boot MacOSX-Windows-Linux:
 
 
 
-	
+
   * MacOSX: car c'est un superbe OS, et j'ai hâte de tester [Cocoa](http://revver.com/video/230333/simple-cocoaobjective-c-xcode-tutorial/)
 
-	
+
   * Windows: car certains softs n'existent que sous Windows (certains jeux, Visual studio, etc.)
 
-	
+
   * Linux: car j'adore le libre, j'adore Linux et j'adore le libre (déjà dit?)
 
 

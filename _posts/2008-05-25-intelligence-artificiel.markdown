@@ -3,6 +3,7 @@ author: grozeille
 comments: true
 date: 2008-05-25 08:46:18+00:00
 layout: post
+excerpt_separator: <!--more-->
 slug: intelligence-artificiel
 title: Intelligence Artificiel
 wordpress_id: 61
@@ -23,7 +24,10 @@ L'étape supérieur serait qu'il puisse me répondre avec une approche "euristiq
 
 
 
-<!-- more -->Pour vulgariser le concept: on considère que le « cerveaux » est une boite noire, qui prend en entré des informations (un ordre exprimé dans l'interface de chat par exemple) et qui réalise, ou pas, quelque chose en sortie (ouvrir une application par exemple). Il faut donc éduquer longuement la boite noir pour lui dire quand est-ce qu'il faut qu'elle fasse cette chose et dans quel cas elle ne doit pas la faire.
+
+<!--more-->
+
+Pour vulgariser le concept: on considère que le « cerveaux » est une boite noire, qui prend en entré des informations (un ordre exprimé dans l'interface de chat par exemple) et qui réalise, ou pas, quelque chose en sortie (ouvrir une application par exemple). Il faut donc éduquer longuement la boite noir pour lui dire quand est-ce qu'il faut qu'elle fasse cette chose et dans quel cas elle ne doit pas la faire.
 Un peu comme un gamin qui se fait engueulé par sa mère et qui comprend quand est-ce qu'il peut jouer et quand il doit faire ses devoirs.
 
 

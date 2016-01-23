@@ -3,6 +3,7 @@ author: grozeille
 comments: true
 date: 2008-05-08 18:34:15+00:00
 layout: post
+excerpt_separator: <!--more-->
 slug: appeler-du-java-depuis-net
 title: Appeler du Java depuis .Net
 wordpress_id: 53
@@ -18,11 +19,13 @@ tags:
 
 Deux mondes s'affrontent: Java et .Net. Chacun choisi son camp, ou choisi les deux... moi j'ai la double nationalité :) Mais quand les deux mondes doivent alors communiquer? Je fais l'interprète. Voila le topo:
 J'ai une application .Net qui a besoin de manipuler des classes Java, et pour se faire je passe par [C++/CLI](http://en.wikipedia.org/wiki/C%2B%2B/CLI): comment avoir un pied dans du .Net et un autre dans du natif C++.
-<!-- more -->
+
+<!--more-->
+
 L'avantage de C++/CLI ([Common Language Infrastructure](http://en.wikipedia.org/wiki/Common_Language_Infrastructure)) c'est qu'on peut mixer du code managé et non-managé. Je peux donc compiler un assembly .Net en C++, qui lui fait appelle à du pure code C++ natif. Ici en l'occurrence j'utilise `"jni.h"` pour communiquer avec la JVM à l'aide de `jvm.dll`.
 
 Rentrons dans le vif du sujet: qu'est-ce que ça donne du coté de mon application C#:
-[code language='csharp']
+```C#
 // on démarre la JVM avec mes bons arguments
 MathiasJniCpp.JVMWrapper.InitJvm(new String[] { "-Djava.class.path=Mathias.Jni.Java.jar" });
 
@@ -37,7 +40,7 @@ Console.WriteLine(javaObject.SayHello());
 
 // on libère la JVM
 JVMWrapper.ReleaseJvm();
-[/code]
+```
 
 `MathiasJniCpp` c'est le namespace de mon assembly c++/cli, j'en reparlerai plus tard.
 On voit que je manipule une classe JVMWrapper qui me permet de charger une JVM (et de la libérer). J'utilise aussi une classe .Net codé en C++/CLI. En fait, je l'utilise comme un classe C#, ou VB.net etc. C'est une classe "classique" .Net avec des méthodes et des propriétés.
@@ -47,7 +50,7 @@ Pour rappelle, il y a des mots-clefs en C# très lié au Framework (comme `forea
 
 Je ne vais pas montrer tout le code, car trop long et [disponible ici](http://www.box.net/shared/ropzl4u80o).
 Mais voici un aperçu de la classe C++:
-[code language='cpp']
+```C++
 #include "jni.h"
 public ref class MyJavaWrapper
 {
@@ -80,7 +83,7 @@ public:
     JVMWrapper::env->DeleteLocalRef(this->obj);
   }
 };
-[/code]
+```
 `ref class` veut dire "c'est une classe .Net". Mais... ma classe n'implémente pas `IDisposable`!! Et c'est quoi ce destructeur??
 Et oui: le destructeur C++ pour un objet .Net est transformé en la méthode `Dispose()` et la classe devient alors forcement `IDisposable`. Pour gérer le `finalize` [allez voir ici](http://dotnet.developpez.com/faq/cppcli/?page=syntaxe#finalizer_vs_destructor).
 
@@ -89,7 +92,7 @@ J'utilise la classe JVMWrapper qui me permet de communiquer avec la JVM, et je l
 _Étant donnée que la classe et la méthode ne change pas, j'ai rendu ces données `static`._
 
 Voyons maintenant ce que fait `MyJavaWrapper::initJavaMetadata();`:
-[code language='cpp']
+```C++
 /* initialise les metadata du coté Java */
 static void initJavaMetadata()
 {
@@ -100,28 +103,28 @@ static void initJavaMetadata()
     MyJavaWrapper::initMethodId = JVMWrapper::env->GetMethodID(MyJavaWrapper::clazz, "", "()V");
   }
 }
-[/code]
+```
 
 C'est la dedans que j'obtiens une fois pour toute la représentation de la classe Java `mathias.jni.java.MyJavaClass` et la représentation de la méthode `<init>` avec en paramètre `()V`.
 Pour comprend le lien avec la classe, il n'y a pas trop de problème: c'est le [fully qualified name](http://en.wikipedia.org/wiki/Fully_qualified_name) avec des '/' au lieu des '.'.
 Mais en ce qui concerne la recherche d'une méthode, ça devient du charabia!!
 En fait, `<init>` est une méthode un peu spéciale: c'est un constructeur.
-Ensuite, on spécifie les arguments du constructeur que l'on cherche, et la on tombe sur une syntaxe barbare. Dans notre cas, on cherche le constructeur par défaut c'est à dire qui ne prend pas d'argument. 
+Ensuite, on spécifie les arguments du constructeur que l'on cherche, et la on tombe sur une syntaxe barbare. Dans notre cas, on cherche le constructeur par défaut c'est à dire qui ne prend pas d'argument.
 Mais pour mieux comprendre la syntaxe barbare, voyons d'autres exemples de méthodes:
-[code language='cpp']
+```C++
 JVMWrapper::env->GetMethodID(MyJavaWrapper::clazz, "setPeople", "(Ljava/lang/String;)V");
-[/code]
+```
 Traduction: je cherche la méthode `setPeople` qui prend un argument de type `java.lang.String` et qui retourne `void`.
 Un autre exemple:
-[code language='cpp']
+```C++
 JVMWrapper::env->GetMethodID(MyJavaWrapper::clazz, "sayHello", "([Ljava/lang/String;Z;)I");
-[/code]
+```
 Traduction: je cherche la méthode `sayHello` qui prend un argument de type `java.lang.String[]` et un autre de type `boolean` et qui retourne un type `int`.
 
 On retrouve cette syntaxe à beaucoup d'endroits, comme sous [Eclipse](http://grozeille.files.wordpress.com/2008/05/eclipsejni.png) par exemple. Pour plus d'explication voir la [documentation officielle](http://java.sun.com/j2se/1.4.2/docs/guide/jni/spec/types.html).
 
 Si l'on veut maintenant appeler une méthode Java, on récupère sa représentation tout comme on le fait avec le constructeur, puis on l'invoque sur notre instance:
-[code language='csharp']
+```C#
 public ref class MyJavaWrapper
 {
 private:
@@ -135,8 +138,8 @@ private:
 public:
   /* initialisation des métadata Java/JNI */
   static void initJavaMetadata()
-  { 
-    /* initialisation de la classe et du constructeur, comme vu précédemment 
+  {
+    /* initialisation de la classe et du constructeur, comme vu précédemment
     [...]  */
 
     // on récupère la représentation de "sayHello"
@@ -158,22 +161,22 @@ public:
     return resultStringConvert.toDotnet();
   }
 };
-[/code]
+```
 
 Voila, maintenant vous savez:
 
 
 
-	
+
   * obtenir la représentation d'une classe Java
 
-	
+
   * obtenir la représentation d'une méthode d'une classe
 
-	
+
   * créer une instance d'une classe Java
 
-	
+
   * invoker des méthodes sur une instance
 
 
@@ -191,10 +194,8 @@ Un petit rappel des liens utiles:
 
 
 
-	
+
   * [http://dotnet.developpez.com/faq/cppcli/](http://dotnet.developpez.com/faq/cppcli/)
 
-	
+
   * [http://java.sun.com/j2se/1.4.2/docs/guide/jni/spec/jniTOC.html](http://java.sun.com/j2se/1.4.2/docs/guide/jni/spec/jniTOC.html)
-
-

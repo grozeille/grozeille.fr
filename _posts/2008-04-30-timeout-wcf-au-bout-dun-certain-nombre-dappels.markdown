@@ -3,6 +3,7 @@ author: grozeille
 comments: true
 date: 2008-04-30 23:20:52+00:00
 layout: post
+excerpt_separator: <!--more-->
 slug: timeout-wcf-au-bout-dun-certain-nombre-dappels
 title: Timeout WCF au bout d'un certain nombre d'appels
 wordpress_id: 50
@@ -20,7 +21,9 @@ Rien de plus stressant que de passer une journée entière sur un bug. Surtout s
 **Contexte** : une application Web Asp.Net communique avec un service WCF.
 **Problème** : au bout d’un certain nombre d’appels (invariant) l’application Web n’arrive plus à joindre le serveur (Timeout).
 
-<!-- more -->Pour conserver une trace de mon incompétence, voici donc la **solution**:
+<!--more-->
+
+Pour conserver une trace de mon incompétence, voici donc la **solution**:
 Pour qu'on puisse dialoguer avec un service WCF dans une page Asp.net, je leur injecte un proxy à l’aide de Spring (voir [Spring.net pour le web](http://www.springframework.net/doc-latest/reference/html/web.html#web-di)). Pour cela, j’utilise une "factory de proxy" à l’aide de l’interface [IFactoryObject](http://www.springframework.net/doc-latest/reference/html/objects.html#d0e4032).
 Crédule que j’étais, j’imaginais que le fait de retourner `true` pour la propriété `IsSingleton` allait faire en sorte que Spring.net ne fasse appel qu’une seule fois à la méthode `GetObject()`.
 Et bien non ! C'est à vous d’être cohérent: même si `IsSingleton` retourne `true`,  rien ne vous empêche de toujours retourner une instance différente dans la méthode `GetObject()`.
@@ -32,9 +35,9 @@ Il est tout de même dommage que les [traces WCF](http://msdn.microsoft.com/en-u
 
 Pour approfondir le sujet sur les `IFactoryObject` :
 Un objet qui implémente `IFactoryObject` doit toujours être un singleton, si ce n’est pas le cas on obtient une exception:
-[code language='xml']
+```XML
 
-[/code]
+```
 `
 => IFactoryObject must be defined as a singleton - IFactoryObjects themselves are not allowed to be prototypes.
 `
@@ -42,9 +45,9 @@ Un objet qui implémente `IFactoryObject` doit toujours être un singleton, si c
 La propriété `IsSingleton` de la factory indique seulement ce qu’elle est censée faire... mais sans aucune obligation/vérification du comportement. Dans mon cas, je retournais `true` mais rien ne m'a empêché de créer une nouvelle instance à chaque appel...
 
 Dans le cas particulier d'une application Asp.net, on peut avoir des "presque singleton" en changeant le `scope`:
-[code language='xml']
+```XML
 
-[/code]
+```
 
 
 
