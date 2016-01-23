@@ -1,0 +1,39 @@
+---
+author: grozeille
+comments: true
+date: 2005-01-27 21:38:00+00:00
+layout: post
+slug: echec
+title: Echec
+wordpress_id: 45
+categories:
+- linux
+tags:
+- .Net
+- linux
+- mono
+---
+
+Echec total :(
+
+Je voulais tester [Cygnome](http://cygnome2.sourceforge.net/) en en faire mon shell par défaut sous windows.... je n'y arrive pas.
+
+De même pour Xorg. La Warty d'Ubuntu est fournie avec XFree, mais je voulais tester les effets d'ombres et de transparences avec [Xorg](http://freedesktop.org/~keithp/screenshots/).... mais je dois m'armer de patience.
+
+Bref, je passe à autre chose. Mes projets sont :
+
+
+
+	
+  * continuer mes recherches sur [lwjgl](http://www.lwjgl.org/)
+
+	
+  * re-coder ma petite appli .Net à la WhereIsIt avec sérialisation XML (SOAP ?)
+
+	
+  * re-coder mon projet de licence en .Net avec [Maverick](http://mavnet.sourceforge.net/).
+
+
+En ce qui concerne le serveur ASP.Net, je me suis amusé avec Apache2 couplé à Cassini (ou le serveur XPS de Mono) grâce à mod_proxyredirect ^^
+
+[![](http://backintochaos.freesurf.fr/images/Wheremini.png)](http://backintochaos.freesurf.fr/images/Where.net.png)

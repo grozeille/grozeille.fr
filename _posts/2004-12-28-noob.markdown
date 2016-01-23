@@ -1,0 +1,13 @@
+---
+author: grozeille
+comments: true
+date: 2004-12-28 19:09:00+00:00
+layout: post
+slug: noob
+title: nOOb
+wordpress_id: 34
+categories:
+- Blabla
+---
+
+New sur la Blogosphere, donc rien de particulier à dire...

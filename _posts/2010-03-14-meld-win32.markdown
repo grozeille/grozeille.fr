@@ -1,0 +1,28 @@
+---
+author: grozeille
+comments: true
+date: 2010-03-14 23:17:25+00:00
+layout: post
+slug: meld-win32
+title: Meld win32
+wordpress_id: 355
+categories:
+- Developpement
+tags:
+- diif
+- meld
+- merge
+- scm
+- win32
+- windows
+---
+
+Après beaucoup de patience, et beaucoup de recherche sur Python (je n'ai jamais vraiment codé en Python) j'ai finis par sortir un package de Meld 1.3 avec les plugins pour les différents SCM qui fonctionnent (SVN/GIT/HG/etc.)
+
+Cela donne:
+[![](http://grozeille.files.wordpress.com/2010/03/meldhg.png)](http://grozeille.files.wordpress.com/2010/03/meldhg.png)
+
+On peut donc ce passer de Tortoise, et c'est très léger.
+PS: ce package contient le "patch.exe" d'[UnixUtil](http://unxutils.sourceforge.net/) ce qui évite toute installation de Cygwin.
+Téléchargement sur: [http://bitbucket.org/grozeille/meld/downloads/](http://bitbucket.org/grozeille/meld/downloads/)
+

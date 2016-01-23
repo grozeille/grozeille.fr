@@ -1,0 +1,39 @@
+# Site settings
+gems: [jekyll-paginate]
+title: The World is mine
+email: mathias.kluba@gmail.com
+author: Mathias Kluba
+avatar: "//www.gravatar.com/avatar/fcf307a3a2899d162cabfd41241f17b9?d=mm&s=135"
+profile: > # until "timezone:"
+  Développeur .Net, Java, Web et Big Data.
+timezone: Europe/Paris
+description: > # this means to ignore newlines until "baseurl:"
+  Un blog qui parle de mes expériences en .Net, Java, Web et Big Data.
+baseurl: "" # the subpath of your site, e.g. /blog/
+url: "" # the base hostname & protocol for your site
+twitter_username: mathiaskluba
+github_username:  grozeille
+google_analytics: "UA-336570-1" # Tracking ID, e.g. "UA-000000-01"
+
+# Comment Service (Disqus or 多说)
+#  choose one and un-comment the line to active it
+#disqus_shortname: xxx   # get one: https://disqus.com/admin/signup/
+#duoshuo_shortname: xxx  # get one: http://duoshuo.com/create-site/
+
+permalink: /archivers/:title
+
+# Build settings
+paginate: 5
+paginate_path: "page:num"
+
+highlighter: pygments
+markdown: redcarpet
+redcarpet:
+  extensions:
+    - hard_wrap
+    - no_intra_emphasis
+    - autolink
+    - strikethrough
+    - fenced_code_blocks
+    - tables
+    - footnotes

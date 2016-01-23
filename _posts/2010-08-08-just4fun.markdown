@@ -1,0 +1,20 @@
+---
+author: grozeille
+comments: true
+date: 2010-08-08 13:46:21+00:00
+layout: post
+slug: just4fun
+title: Just4Fun
+wordpress_id: 419
+categories:
+- Developpement
+- SoSNet
+tags:
+- gsource
+- hg
+- mercurial
+---
+
+[youtube=http://www.youtube.com/watch?v=FkqdqrbVFL0&hl=fr_FR&fs=1?rel=0&hd=1&border=1]
+
+Découvert grâce au très bon compte-rendu du JUG: [http://blog.excilys.com/2010/05/14/compte-rendu-du-paris-jug-soiree-build-share-deploy/](http://blog.excilys.com/2010/05/14/compte-rendu-du-paris-jug-soiree-build-share-deploy/)

@@ -1,0 +1,30 @@
+---
+author: grozeille
+comments: true
+date: 2006-06-10 17:14:23+00:00
+layout: post
+slug: cygnome
+title: CyGnome
+wordpress_id: 11
+categories:
+- linux
+tags:
+- gnome
+- linux
+---
+
+Dans mon precedent poste sur Gnome-Java, j'ai ecris :
+
+
+<blockquote>"[...]faire une application qui s'integre bien dans Gnome, le tout realise dans l'elegant langage qu'est le Java [...] generer un executable natif sous linux [...][](http://java-gnome.sourceforge.net/cgi-bin/bin/view/Main/AntNativeCompiles) qui compile avec GCJ (**de toutes façon, vous avez deja vu Gnome sous Windows???**).</blockquote>
+
+
+C'est la  mon erreur : je savais tres bien que gnome existait sous Windows, mais je n'avais jamais vraiment essaye...
+Alors voila chose faite ! Grace a [Cygwin + CyGnome](http://cygwinports.dotsrc.org/).
+
+Explication : [Cygwin](http://www.cygwin.com) est un environnement linux sous windows (donc pas de kernel linux mais Bash, Gcc, Vi etc.. recompile sous windows).
+
+
+
+[![CygnomeScreen](http://grozeille.files.wordpress.com/2006/06/CyGnome.thumbnail.png)](http://grozeille.files.wordpress.com/2006/06/CyGnome.png)
+CyGnome c'est tout simplement [Gnome](http://www.gnomefr.org/) recompile en natif sous windows grace a Cygwin. Bien evidement on beneficie pas des avantages du noyau Linux et des nouveautes, mais j'ai enfin un explorateur (Nautilus) avec un theme GTK qui a de la gueule (et puis je peut utiliser mes commandes linux prefere comme GCJ pour recompiler mon appli sous Windows :))

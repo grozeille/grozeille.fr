@@ -1,0 +1,33 @@
+---
+author: grozeille
+comments: true
+date: 2010-01-21 19:57:14+00:00
+layout: post
+slug: '253'
+title: Java for iPhone
+wordpress_id: 253
+categories:
+- Blabla
+- Developpement
+tags:
+- .Net
+- Apple
+- iPhone
+- java
+- mono
+---
+
+Pour les fans de .Net et de l'iPhone, vous savez sans doute que vous pouvez vous éclater avec [MonoTouch](http://monotouch.net/).
+J'en profite pour dire que [JB Evain](http://evain.net/blog/) en parlera aux [TechDays](http://www.microsoft.com/france/mstechdays/programmes/parcours.aspx?index=70).
+
+La particularité et le défi de MonoTouch, c'est que le processeur de l'iPhone ne supporte pas une opération nécessaire à la compilation à chaud (JIT), qui est la base des langages sur une VirtualMachine (.Net et Java). L'application Mono est alors compilée nativement, avec une suppression des bibliothèques du framework inutilisées.
+
+Et Java alors, est-ce que la communauté compte faire quelque chose?
+Et bien une startup, [Flexycore](http://www.flexycore.com/), l'a déjà fait: iSpectrum! Et le produit est gratuit pour les projets Open-Source!!! Ce qui n'est pas le cas pour MonoTouch.
+
+Voici un aperçu de ce qui est possible:
+
+[youtube=http://www.youtube.com/watch?v=l-bXdM5rU2g&hl=fr_FR&fs=1&color1=0x3a3a3a&color2=0x999999]
+
+Certes, la démo n'est pas "bandante", mais derrière, il y a le support de J2ME, du JavaScript, les API de l'iPhone (comme le GPS) et bientôt l'API OpenGL ES.
+Est-ce le retour de Java pour les jeux mobiles?

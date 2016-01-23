@@ -1,0 +1,52 @@
+---
+author: grozeille
+comments: true
+date: 2010-03-09 19:09:59+00:00
+layout: post
+slug: sosnet
+title: SOSNET
+wordpress_id: 300
+categories:
+- SoSNet
+tags:
+- .Net
+- debug
+- sos
+- windbg
+---
+
+[caption id="attachment_317" align="aligncenter" width="294" caption="Avec SOSNet, je dis STOP aux bugs!!"][![](http://grozeille.files.wordpress.com/2010/03/804434194_896aa4ef90.jpg?w=294)](http://grozeille.files.wordpress.com/2010/03/804434194_896aa4ef90.jpg)[/caption]
+
+J'étais en train de manipuler les AppDomains sur mon projet [DotNetServer ](http://bitbucket.org/grozeille/dotnetserver/)(oui je sais le nom pu) et je voulais analyser la mémoire pour en savoir plus sur les Assembly chargée dans les AppDomains.
+
+Pour cela, on peut utiliser [WinDBG](http://en.wikipedia.org/wiki/WinDbg) avec son extension [SOS](http://msdn.microsoft.com/en-us/library/bb190764(VS.80).aspx) (Son of Strike) qui permet d'effectuer quelques commandes pour .Net. Il existe aussi une extension à SOS pour des commandes très utiles en .net: [SOSEX](http://www.stevestechspot.com/SOSEXANewDebuggingExtensionForManagedCode.aspx).
+
+Mais voila, WinDBG c'est barbare, en ligne de commande et pas très clair.
+[Yann Shwartz](https://twitter.com/abolibibelot) nous a fait une présentation sur touts ça lors d'une [session ALT.Net](http://www.altnetfr.org/2009/07/16/altnet-paris-16-deboguer-dans-la-joie-avec-windbg-par-yann-schwartz/), mais même après 1h d'explication, je crois qu'on est plus d'un à avoir laissé tombé la chose tellement c'est compliqué à utiliser.
+
+Mais Yann a développé un outil formidable (oui oui, vraiment) qui permet de faire du LINQ sur nos objets en mémoire. Le projet s'appelle [linqdbg](http://code.google.com/p/linqdbg/source/checkout) et je vous invite tous à y contribuer. Associer cela à [LinqPad](http://www.linqpad.net/) et vous obtenez un outil puissant d'analyse de la mémoire de votre programme.
+
+Mais je trouve tout de même que ce n'est pas la solution que j'attend. J'ai voulu quelque chose de plus "ergonomique" pour débuter avec Windbg.
+J'ai trouvé pour cela [SOSAssist](http://www.thinktecture.com/SOSAssist) mais je n'ai même pas réussi à l'exécuter (problème avec Windows 64bit?).
+
+Ne trouvant rien d'équivalent, j'ai décidé de faire mon WinDBG Next Gen :)
+Les sources du projet se trouve sur [bitbucket](http://bitbucket.org/grozeille/sosnet/src/) car je suis devenu plus fan de Mercurial (HG) que de GIT.
+Pour les plus flémard d'entre vous, vous pouvez télécharger [la version compilée](http://bitbucket.org/grozeille/sosnet/downloads/SOS.Net.zip).
+
+Et pour les vrais grosses huitres qui ne veulent même pas télécharger et l'exécuter, voici des screen de ce qui est possible de faire ;)
+
+[caption id="attachment_303" align="aligncenter" width="505" caption="Sélectionnez une processus pour s'y attacher"][![](http://grozeille.files.wordpress.com/2010/03/sos4net_01.png)](http://grozeille.files.wordpress.com/2010/03/sos4net_01.png)[/caption]
+
+[caption id="attachment_305" align="aligncenter" width="505" caption="Vous pouvez visualiser les AppDomains"][![](http://grozeille.files.wordpress.com/2010/03/sos4net_02.png)](http://grozeille.files.wordpress.com/2010/03/sos4net_02.png)[/caption]
+
+[caption id="attachment_306" align="aligncenter" width="491" caption="Vous pouvez voir les Assembly chargée dans un AppDomain"][![](http://grozeille.files.wordpress.com/2010/03/sos4net_03.png)](http://grozeille.files.wordpress.com/2010/03/sos4net_03.png)[/caption]
+
+[caption id="attachment_307" align="aligncenter" width="600" caption="Listing des types chargés en mémoire (avec recherche)"][![](http://grozeille.files.wordpress.com/2010/03/sos4net_04.png)](http://grozeille.files.wordpress.com/2010/03/sos4net_04.png)[/caption]
+
+[caption id="attachment_308" align="aligncenter" width="600" caption="Double-click sur un type: vous voyez les instances. Double-click sur l'instance: vous voyez le détails de ses champs"][![](http://grozeille.files.wordpress.com/2010/03/sos4net_05.png)](http://grozeille.files.wordpress.com/2010/03/sos4net_05.png)[/caption]
+
+[caption id="attachment_309" align="aligncenter" width="600" caption="Double-click sur un champ d'un objet: vous voyez le détail du membre... avec un 'Breadcrumb' pour naviguer entre les instances"][![](http://grozeille.files.wordpress.com/2010/03/sos4net_06.png)](http://grozeille.files.wordpress.com/2010/03/sos4net_06.png)[/caption]
+
+[caption id="attachment_310" align="aligncenter" width="600" caption="La navigation d'instance fonctionne aussi avec les tableaux (sélection d'index)"][![](http://grozeille.files.wordpress.com/2010/03/sos4net_07.png)](http://grozeille.files.wordpress.com/2010/03/sos4net_07.png)[/caption]
+
+[caption id="attachment_311" align="aligncenter" width="600" caption="Toutes les 'actions' sont tracées en ligne de commande. Il est toujours possible d'utilise les commandes comme avec WinDBG!!"][![](http://grozeille.files.wordpress.com/2010/03/sos4net_08.png)](http://grozeille.files.wordpress.com/2010/03/sos4net_08.png)[/caption]

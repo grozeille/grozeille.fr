@@ -1,0 +1,44 @@
+---
+layout: default
+---
+
+<div class="home">
+  <a class="rss-link" href="{{ "/feed.xml" | prepend: site.baseurl }}">RSS</a>
+  <!--<h1 class="page-heading">Articles</h1>-->
+
+  <ul class="post-list">
+    {% for post in paginator.posts %}
+      <li>
+        <span class="post-meta">{{ post.date | date: "%b %-d, %Y" }}</span>
+
+        <h2>
+          <a class="post-link" href="{{ post.url | prepend: site.baseurl }}">{{ post.title }}</a>
+        </h2>
+        <div class="excerpt"><article class="post-content">
+          {{ post.excerpt }}
+          <a class="button" href="{{ post.url | prepend: site.baseurl }}">
+            {{ site.theme.str_continue_reading }}
+          </a>
+        </article>
+        </div>
+        <!--{{ post.content }}-->
+      </li>
+    {% endfor %}
+  </ul>
+
+  <!-- Pagination links -->
+<div class="pagination">
+  {% if paginator.previous_page %}
+    <a href="{{ paginator.previous_page_path }}" class="previous">Récents</a>
+  {% else %}
+    <span class="previous">Récents</span>
+  {% endif %}
+  <span class="page_number ">{{ paginator.page }} / {{ paginator.total_pages }}</span>
+  {% if paginator.next_page %}
+    <a href="{{ paginator.next_page_path }}" class="next">Anciens</a>
+  {% else %}
+    <span class="next ">Anciens</span>
+  {% endif %}
+</div>
+
+</div>

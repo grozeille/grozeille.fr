@@ -1,0 +1,91 @@
+---
+author: grozeille
+comments: true
+date: 2005-01-02 21:59:00+00:00
+layout: post
+slug: geeks
+title: Geeks
+wordpress_id: 36
+categories:
+- Developpement
+- linux
+tags:
+- .Net
+- java
+- linux
+- mono
+---
+
+Bon, pour les Geeks comme moi, j'ai découvert un truc sympa aujourd’hui : Mono+ikvm
+
+
+
+
+Explication : .Net (de Microsoft) s’impose comme un standard dans le développement d’applications "fenêtrées", mais bon voila : un standard oui, mais sur Windows avec le Framework .Net de Microsoft…
+
+
+
+
+C’est là qu’intervient Mono ([http://www.mono-project.com/about/index.html](http://www.mono-project.com/about/index.html)).
+
+
+
+
+Mono est un "altérnative" à .Net (voir sur le site pour une explication plus détaillée) cad que grâce à Mono, on peut compiler et exécuter des applications .Net. Résultat, .Net n’est plus une exclusivité Microsoft mais s’étend aux plateformes Linux Mac et autres…
+
+
+
+
+
+
+
+Ikvm : kesako ? ([http://www.ikvm.net/](http://www.ikvm.net/))
+
+
+
+
+Qui ne connais pas Java ? Et bien ikvm c’est comme le JDK de Sun… compatible .Net !
+
+
+
+
+En effet, ikvm regroupe une machine virtuelle faite en .Net, l’implémentation des classes Java en .Net ainsi que des outils permettant la compatibilité .Net/Java.
+
+
+
+
+
+
+
+En gros, tu fais une appli Java, que tu compiles avec ikvm qui te donne un joli petit exe .Net :). Ou même un petit composant Java qui s’intègre dans une appli .Net.
+
+
+
+
+Et là on me répond, et l’avantage de Java alors ? Qu’en est-il du « code once, run anywhere » ? Bingo, la je réponds Mono !
+
+
+
+
+Voila comment faire de Java un langage utilisable pour des applis natives avec un code portable.
+
+
+
+
+Et là on me pose la question : « Et J# ou C# de Microsoft ? »… ok, à part profiter des outils existant pour Java (Eclipse, etc…) je ne vois pas d’autres intérêts. Mais ça demande à être étudié, non ^^ ?
+
+
+
+
+Merci à Will Senn ([http://www.codeproject.com/cpnet/hellomono.asp](http://www.codeproject.com/cpnet/hellomono.asp))
+
+
+
+
+Pour les plus Geeks d'entre vous : Eclipse tournant à l'aide d'IKVM à l'aide de Mono sur Cygwin+Xfree sur Windows2000... rien que ça ! (voir sur le site de Mono)
+
+
+
+
+
+[![](http://www.backintochaos.freesurf.fr/images/ikvm_screenshot_mini.jpg)](http://www.backintochaos.freesurf.fr/images/ikvm_screenshot.jpg)
