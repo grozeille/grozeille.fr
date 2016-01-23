@@ -1,5 +1,5 @@
 # grozeille.fr
 
-![Blog](http://grozeille.fr)
+(http://grozeille.fr)
 
-Fork from clone ![Blog](https://github.com/laobubu/jekyll-theme-EasyBook.git)
+Fork from clone (https://github.com/laobubu/jekyll-theme-EasyBook.git)
